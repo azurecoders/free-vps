@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: SSH into VPS and update code
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1
         with:
+          debug: true
           host: ${{ secrets.VPS_IP }}
           username: ${{ secrets.VPS_USERNAME }}
           key: ${{ secrets.VPS_SSH_KEY }}
@@ -20,5 +21,5 @@ jobs:
             cd /home/daytona/coding
             git pull origin main
             npm install
-            pm2 restart all
-            sleep 5
+            pm2 restart my-app --update-env
+            exit 0
