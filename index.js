@@ -12,6 +12,7 @@ app.get("/health", (req, res) => {
   res.json({
     status: 200,
     message: "OK",
+    timestamp: new Date().toISOString(),
   });
 });
 
