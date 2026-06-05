@@ -26,6 +26,19 @@ app.get("/test", (req, res) => {
   });
 });
 
+// Create one more test route that is useful somewhat
+app.get("/info", (req, res) => {
+  res.json({
+    status: 200,
+    message: "Server Info",
+    node_version: process.version,
+    platform: process.platform,
+    uptime: process.uptime(),
+    memory_usage: process.memoryUsage(),
+    timestamp: new Date().toISOString(),
+  });
+});
+
 app.listen(5000, () => {
   console.log("Server is running on PORT 5000");
 });
