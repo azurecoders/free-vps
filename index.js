@@ -13,6 +13,7 @@ app.get("/health", (req, res) => {
     status: 200,
     message: "OK",
     timestamp: new Date().toISOString(),
+    author: "azureCoders",
   });
 });
 
