@@ -6,6 +6,8 @@ app.get("/", (req, res) => {
   res.send("OK");
 });
 
+// Health Route
+
 app.get("/", (req, res) => {
   res.json({
     status: 200,
