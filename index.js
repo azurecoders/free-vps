@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
 
 // Health Route
 
-app.get("/", (req, res) => {
+app.get("/health", (req, res) => {
   res.json({
     status: 200,
     message: "OK",
