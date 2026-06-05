@@ -17,6 +17,15 @@ app.get("/health", (req, res) => {
   });
 });
 
+// Create one more test route
+app.get("/test", (req, res) => {
+  res.json({
+    status: 200,
+    message: "Test route is working",
+    timestamp: new Date().toISOString(),
+  });
+});
+
 app.listen(5000, () => {
   console.log("Server is running on PORT 5000");
 });
